@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 
 public class parserHockeyTable {
-
-
+    private static TeamDAO teamDAO;
+    //TeamDAO teamDAO;
 
     private static Document getPage() throws IOException {
             String urlKHL = "https://nb-bet.com/Hockey/Tournaments?ID=1";
@@ -21,7 +21,7 @@ public class parserHockeyTable {
     }
 
     public static void main(String[] args) throws IOException {
-        TeamDAO teamDAO = new TeamDAO();
+       teamDAO = new TeamDAO();
         Document table = getPage();
         Element temp = table.selectFirst("table[class=table-summary]");
         Elements cells1 = temp.select("tr[class=tournaments-stats-cells1]");
@@ -49,7 +49,7 @@ public class parserHockeyTable {
             team.setVbr(numbersCeils1.get(index++).text());
             team.setStrafh(numbersCeils1.get(index++).text());
             team.setProcentWin(numbersCeils1.get(index++).text());
-            teamDAO.create(team);
+         //teamDAO.create(team);
             System.out.println(team);
         }
         int test =0;
@@ -71,7 +71,7 @@ public class parserHockeyTable {
             team.setVbr(numbersCeils2.get(test++).text());
             team.setStrafh(numbersCeils2.get(test++).text());
             team.setProcentWin(numbersCeils2.get(test++).text());
-            teamDAO.create(team);
+           teamDAO.create(team);
             System.out.println(team);
         }
 

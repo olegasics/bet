@@ -5,6 +5,7 @@ import bet.entity.Team;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
 import javax.transaction.Transactional;
@@ -15,12 +16,9 @@ import java.util.List;
 @Transactional
 public class TeamDAO {
 
-    SessionFactory sessionFactory;
+    SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
     Criteria criteria;
 
-    public TeamDAO() {
-        this.sessionFactory = SessionFactoryUtilsTeam.getInstance();
-    }
 
 
     public Team create(Team entity) {
