@@ -49,7 +49,7 @@ public class parserHockeyTable {
             team.setVbr(numbersCeils1.get(index++).text());
             team.setStrafh(numbersCeils1.get(index++).text());
             team.setProcentWin(numbersCeils1.get(index++).text());
-         //teamDAO.create(team);
+         teamDAO.create(team);
             System.out.println(team);
         }
         int test =0;
@@ -71,7 +71,7 @@ public class parserHockeyTable {
             team.setVbr(numbersCeils2.get(test++).text());
             team.setStrafh(numbersCeils2.get(test++).text());
             team.setProcentWin(numbersCeils2.get(test++).text());
-           teamDAO.create(team);
+          // teamDAO.create(team);
             System.out.println(team);
         }
 

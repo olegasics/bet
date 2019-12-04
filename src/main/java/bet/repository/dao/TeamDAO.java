@@ -1,6 +1,5 @@
 package bet.repository.dao;
 
-import bet.SessionFactoryUtilsTeam;
 import bet.entity.Team;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
